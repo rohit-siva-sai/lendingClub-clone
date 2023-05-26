@@ -30,6 +30,7 @@ export default function App({ Component, pageProps }) {
     panNo,
     userDetails,
     updateUserDetails,
+    updateProgress
   ] = useStore((store) => [
     store.loanType,
     store.dob,
@@ -43,21 +44,22 @@ export default function App({ Component, pageProps }) {
     store.panCardNo,
     store.userDetails,
     store.updateUserDetails,
+    store.updateProgress,
   ]);
-  console.log(
-    "loan",
-    loanType,
-    dob,
-    loan,
-    income,
-    name,
-    address,
-    email,
-    phno,
-    userId,
-    panNo,
-    userDetails
-  );
+  // console.log(
+  //   "loan",
+  //   loanType,
+  //   dob,
+  //   loan,
+  //   income,
+  //   name,
+  //   address,
+  //   email,
+  //   phno,
+  //   userId,
+  //   panNo,
+  //   userDetails
+  // );
 
   const userCollection = collection(db, "users");
   const router = useRouter();
@@ -105,18 +107,18 @@ export default function App({ Component, pageProps }) {
     }
 
     const userDoc = doc(db, "users", id);
-    console.log("rohit siva sai logging");
+    // console.log("rohit siva sai logging");
 
     await updateDoc(userDoc, values);
-    console.log("updated successfully");
+    // console.log("updated successfully");
     getUser(id);
   };
 
   const submitNewUser = async (id) => {
-    console.log("rohit sivas ai");
+    // console.log("rohit sivas ai");
 
     const value = await getUser(id);
-    console.log("value", value);
+    // console.log("value", value);
 
     try {
       if (!value) {
@@ -146,9 +148,10 @@ export default function App({ Component, pageProps }) {
   const logOut = async () => {
     signOut(getAuth())
       .then(() => {
-        console.log("Sign-out successful.");
+        // console.log("Sign-out successful.");
         localStorage.removeItem("userDetails");
         // updateUserDetails(null);
+        updateProgress()
         router.push("/");
         // router.reload()
       })

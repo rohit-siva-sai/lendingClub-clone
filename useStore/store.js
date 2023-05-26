@@ -8,7 +8,7 @@ const store = (set) => ({
   progress: 0,
   loanType: "justme",
   dob: "",
-  totalIncome: 0,
+  totalIncome: null,
   loan: { loanAmount: 1000, loanPurpose: "" },
   username: { firstName: "", lastName: "" },
   phoneNumber: "",
@@ -40,6 +40,7 @@ const store = (set) => ({
   updateUserId: async (userId) => set((store) => ({ userId: userId })),
   updatePanCardNo: async (panNo) => set((store) => ({ panCardNo: panNo })),
   updateUserDetails: async (user) => set( (store) => ({ userDetails:  user })),
+  updateProgress: async (user) => set( (store) => ({ progress:  0 })),
 
   // set(
   //   produce((store) => ({

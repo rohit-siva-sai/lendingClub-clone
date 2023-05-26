@@ -30,6 +30,7 @@ const ProgressBar = () => {
     "/settings/email",
     "/settings/password",
     "/settings/phoneNumber",
+    "/settings/address",
    
   ];
   const router = useRouter();
@@ -45,7 +46,7 @@ const ProgressBar = () => {
   
   return (
     <div className="bg-gray-100">
-      {(progress>0 && showBar  ) && (
+      {( progress>0 && showBar ) && (
         <div className="py-5 bg-gray-100  z-30 ">
           <BorderLinearProgress
             variant="determinate"

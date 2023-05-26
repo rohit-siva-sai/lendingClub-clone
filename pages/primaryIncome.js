@@ -45,9 +45,9 @@ const PrimaryIncome = () => {
               className=" w-full py-2 bg-cyan-50  font-semibold  outline-none rounded px-4 text-xl"
             />
           </div>
-          <p className="text-gray-500">
+          {/* <p className="text-gray-500">
             Enter an amount between ₹1,000 and ₹40,000
-          </p>
+          </p> */}
         </div>
         <div className="px-8 pt-12" >
           <Dropdown />
