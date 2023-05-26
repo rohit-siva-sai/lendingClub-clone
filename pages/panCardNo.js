@@ -65,7 +65,7 @@ const PanCardNo = ({submit}) => {
     // submit()
   }
 
-  console.log("dssrohit asiva saos", userDetails,"rpohtrio");
+  // console.log("dssrohit asiva saos", userDetails,"rpohtrio");
 
   return (
     <div className="absolute top-[53%]   -translate-x-[50%] -translate-y-[50%] left-[50%]">

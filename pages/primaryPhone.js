@@ -88,7 +88,7 @@ const PrimaryPhone = ({
     }
     setLoading(true);
 
-    console.log(phoneNumber.length);
+    // console.log(phoneNumber.length);
     onCaptchaVerify();
 
     const appVerify = window.recaptchaVerifier;
@@ -117,7 +117,7 @@ const PrimaryPhone = ({
     window.confirmationResult
       .confirm(otp)
       .then(async (res) => {
-        console.log("sdcd", res);
+        // console.log("sdcd", res);
         // handleUser(res.user);
         // console.log("uxeuyvwedwveug", user);
 

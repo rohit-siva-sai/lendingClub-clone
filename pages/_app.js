@@ -46,26 +46,13 @@ export default function App({ Component, pageProps }) {
     store.updateUserDetails,
     store.updateProgress,
   ]);
-  // console.log(
-  //   "loan",
-  //   loanType,
-  //   dob,
-  //   loan,
-  //   income,
-  //   name,
-  //   address,
-  //   email,
-  //   phno,
-  //   userId,
-  //   panNo,
-  //   userDetails
-  // );
+  
 
   const userCollection = collection(db, "users");
   const router = useRouter();
 
   const getUser = async (id) => {
-    console.log("ssdsdsdsddsdsdsdsdsds");
+    // console.log("ssdsdsdsddsdsdsdsdsds");
 
     try {
       const data = await getDocs(userCollection);
@@ -74,9 +61,9 @@ export default function App({ Component, pageProps }) {
         id: doc.id,
       }));
       const userData = filteredData.filter((item) => item.id === id);
-      console.log("usedatadf", filteredData);
+      // console.log("usedatadf", filteredData);
       const sliceData = userData[0];
-      console.log(sliceData, "slicedata");
+      // console.log(sliceData, "slicedata");
       updateUserDetails(sliceData);
       if (sliceData && sliceData.id === id) return true;
       else return false;

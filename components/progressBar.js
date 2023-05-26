@@ -21,7 +21,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 const ProgressBar = () => {
   const progress = useStore((store) => store.progress);
-  console.log("assa",progress)
+  // console.log("assa",progress)
 
   const exempted = [
     "/dashboard",
