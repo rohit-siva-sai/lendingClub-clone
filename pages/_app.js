@@ -15,6 +15,8 @@ import {
 } from "firebase/firestore";
 import { getAuth, signOut } from "firebase/auth";
 import { useRouter } from "next/router";
+import { Toaster, toast } from "react-hot-toast";
+
 
 export default function App({ Component, pageProps }) {
   const [
@@ -98,7 +100,8 @@ export default function App({ Component, pageProps }) {
 
     await updateDoc(userDoc, values);
     // console.log("updated successfully");
-    getUser(id);
+    getUser(id)
+    toast.success("updated successfully");
   };
 
   const submitNewUser = async (id) => {
@@ -167,6 +170,8 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <Toaster toastOptions={{ duration: 4000 }} />
+
       <Navbar logOut={logOut} />
       <ProgressBar />
       <Component

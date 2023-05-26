@@ -42,6 +42,7 @@ const Address = ({ updateUser }) => {
 
   return (
     <div className="mt-6">
+
       <div className="flex justify-center space-x-12 ">
         <SetSideBar />
         <div className="w-1/2  mt-14">

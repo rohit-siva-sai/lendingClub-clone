@@ -43,20 +43,7 @@ const Dashboard = ({submitNewUser}) => {
     store.userDetails,
     store.updateUserDetails,
   ]);
-  console.log(
-    "loan",
-    loanType,
-    dob,
-    loan,
-    income,
-    name,
-    address,
-    email,
-    phno,
-    userId,
-    panNo,
-    userDetails
-  );
+ 
   const router = useRouter();
   const userCollection = collection(db, "users");
 
@@ -114,13 +101,13 @@ const Dashboard = ({submitNewUser}) => {
   //   }
   // };
 
-  useEffect(() => {
+  useEffect( () => {
     try {
       if (localStorage.getItem("userDetails")) {
         const userDetails = JSON.parse(localStorage.getItem("userDetails"));
         const id = userDetails.uid;
 
-        submitNewUser(id)
+         submitNewUser(id)
       }
     } catch (error) {
       console.log(error.message);
